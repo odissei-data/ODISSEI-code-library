@@ -1,0 +1,37 @@
+---
+title: "Prototype of ODISSEI code library"
+author: 
+  name: "Angelica Maineri"
+  email: "angelica@odissei-data.nl"
+  affiliation: "Erasmus University Rotterdam - ODISSEI"
+date: '`r Sys.Date()`'
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_file="./docs/index.html") })
+output: 
+  html_document:
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+suppressWarnings(library(DT))
+suppressWarnings(library(tidyverse))
+```
+Hello! Thank you for your interest in my project.
+
+This repository is a meant as a protype for an ODISSEI code library, namely a library of code used to execute projects using the ODISSEI infrastructure. ODISSEI (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.
+
+If you have comments, reach out to [Angelica Maineri](angelica@odissei-data.nl).
+
+## Prototype
+
+```{r loaddata}
+df = read_csv("./Data/odissei-projects.csv")
+DT::datatable(df, escape = FALSE,
+              filter = "top", 
+              options = list(dom = "ft", 
+                            pageLength = 1000),
+              rownames = FALSE)
+```
+
+

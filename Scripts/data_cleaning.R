@@ -17,7 +17,7 @@ df = read_csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei
 df2 = df |>
   mutate(publication = paste("<a href=\"", publication, "\">", "doi</a>", sep = "")) |>
   mutate(code = paste("<a href=\"", code, "\">", "link</a>", sep = "")) |>
-  mutate(grantee = paste("<a href=\"", orcid, "\">", grantee, "</a>", sep = ""))
+  mutate(project_lead = paste("<a href=\"", orcid, "\">", project_lead, "</a>", sep = ""))
 
 
 df2 = df2 |> 

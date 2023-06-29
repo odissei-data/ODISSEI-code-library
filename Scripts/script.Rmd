@@ -9,7 +9,10 @@ knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_file="C:/Users/angel/Documents/GitHub/ODISSEI-code-library/docs/index.html") })
 output: 
   html_document:
-    theme: united
+    theme: cosmo
+    toc: yes
+    toc_float:
+      collapsed: true
 ---
 
 ```{r setup, include=FALSE}
@@ -17,13 +20,15 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 suppressWarnings(library(DT))
 suppressWarnings(library(tidyverse))
 ```
+# Welcome
 Hello! Thank you for your interest in my project.
 
 This repository is a meant as a prototype for a code library of projects using LISS data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via ODISSEI. ODISSEI (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.
 
 If you have comments, reach out to [Angelica Maineri](mailto:angelica@odissei-data.nl)
 
-## CBS
+# Code libraries
+## CBS microdata
 
 ```{r loaddata}
 df = read_csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects-clean.csv")
@@ -35,5 +40,6 @@ DT::datatable(df, escape = FALSE,
               rownames = FALSE)
 ```
 
-
+## LISS panel
+** Coming soon ** 
 

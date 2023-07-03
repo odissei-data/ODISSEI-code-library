@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-<!-- Please fill in the following information; M stays for Mandatory -->
+<!-- Please fill in the following information; M stays for Mandatory. Please make sure your code is not commented out  -->
 - CBS project number: <!-- When available, the official CBS project number should be included; _format: XXXX e.g. 1234_ -->
 - Project title (M): 
 - Project Lead (M): <!-- At least one; _format: Name Surname_ --> 

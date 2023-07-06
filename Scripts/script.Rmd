@@ -6,7 +6,7 @@ author:
   affiliation: "Erasmus University Rotterdam - ODISSEI"
 date: '`r Sys.Date()`'
 knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, output_file="C:/Users/angel/Documents/GitHub/ODISSEI-code-library/docs/index.html") })
+  rmarkdown::render(inputFile, encoding = "UTF-8", output_file="C:/Users/angel/Documents/GitHub/ODISSEI-code-library/docs/index.html") })
 output: 
   html_document:
     theme: cosmo
@@ -19,6 +19,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 suppressWarnings(library(DT))
 suppressWarnings(library(tidyverse))
+suppressWarnings(library(stringr))
 ```
 # Welcome
 Hello! Thank you for your interest in my project.
@@ -30,16 +31,28 @@ If you have comments, reach out to [Angelica Maineri](mailto:angelica@odissei-da
 # Code libraries
 ## CBS microdata
 
-```{r loaddata}
-df = read_csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects-clean.csv")
-df = df |> select(-c("...1")) 
+```{r loaddataCBS}
+df = read.csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects-clean_CBS.csv", encoding = "UTF-8")
+df$project_lead = gsub("<e8>", "è", df$project_lead)
+
+df = df |> dplyr:::select(-c("X")) 
 DT::datatable(df, escape = FALSE,
               filter = "top", 
               options = list(dom = "ft", 
-                            pageLength = 1000),
+                            pageLength = 1000, 
+                            autoWidth = TRUE),
               rownames = FALSE)
 ```
 
 ## LISS panel
-** Coming soon ** 
+```{r loaddataLISS}
+df2 = read.csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects-clean_LISS.csv", encoding = "UTF-8")
+df2 = df2 |> dplyr:::select(-c("X")) 
+DT::datatable(df2, escape = FALSE,
+              filter = "top", 
+              options = list(dom = "ft", 
+                            pageLength = 1000, 
+                            autoWidth = TRUE),
+              rownames = FALSE)
+```
 

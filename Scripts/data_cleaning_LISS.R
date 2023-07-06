@@ -7,7 +7,7 @@
 
 # Load packages
 library(tidyverse)
-
+library(stringr)
 
 # Load data
 df = read.csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects_LISS.csv", encoding = "UTF-8")
@@ -19,6 +19,14 @@ df2 = df |>
   mutate(code = paste("<a href=\"", code, "\">", "link</a>", sep = "")) |>
   mutate(project_lead = paste("<a href=\"", orcid, "\">", project_lead, "</a>", sep = ""))
 
+
+df2$link_data = gsub('https://','<a href="https://', df2$link_data )
+df2$link_data = gsub('*$','">data</a>', df2$link_data )
+df2$link_data = gsub(';','">data</a>;', df2$link_data )
+
+
+df2$link_data
+df2$project_lead
 
 df2 = df2 |> 
   select(-c("orcid", "publication.type"))

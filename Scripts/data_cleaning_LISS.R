@@ -23,10 +23,12 @@ df2 = df |>
 df2$link_data = gsub('https://','<a href="https://', df2$link_data )
 df2$link_data = gsub('*$','">data</a>', df2$link_data )
 df2$link_data = gsub(';','">data</a>;', df2$link_data )
-
+df2$link_data[df2$link_data=='\">data</a>'] = ""
 
 df2$link_data
 df2$project_lead
+
+
 
 df2 = df2 |> 
   select(-c("orcid", "publication.type"))

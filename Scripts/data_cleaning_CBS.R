@@ -28,3 +28,6 @@ head(df2)
 
 ## Export ----
 write.csv(df2, "Data/odissei-projects-clean_CBS.csv")
+
+
+

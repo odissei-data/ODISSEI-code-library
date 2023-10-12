@@ -3,3 +3,21 @@ This repository is a meant as a protype for an [ODISSEI code library](https://an
 
 # Contribute
 Do you want to submit your own project and code to be added to the library? Please submit an issue using the _Submission code_ issue template (or [send me an email](mailto:angelica@odissei-data.nl)).
+
+# Update library
+## Step 1: Clone repo
+
+## Step 2: Update data
+Edit the files `odissei-projects_*.csv` files under the `Data` folder. 
+
+## Step 3: Clean csv files
+Open `ODISSEI-code-library.Rproj` and run the data cleaning scripts (`Scripts/data_cleaning_*.R`). Each script will generate a new dataset (`Data/odissei-projects-clean_*.csv`)
+
+## Step 4: Generate HTML 
+Run the R Markdown file (`Scripts/script.Rmd`) to generate the html file (`docs/index.html`) which is then published via GitHub pages.
+
+## Step 5: Commit changes to GitHub and create pull request
+Commit your changes to (a branch  of) the GitHub repository.
+
+## Step 6: Admire the result
+Once the pull request is accepted, within a few minutes the result will be visible on the [ODISSEI code library](https://angelicamaineri.github.io/ODISSEI-code-library/). 

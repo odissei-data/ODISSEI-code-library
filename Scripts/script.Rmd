@@ -1,5 +1,5 @@
 ---
-title: "Prototype of ODISSEI code library"
+title: "Prototype of ODISSEI code library <img src=\"C:/Users/angel/Documents/GitHub/ODISSEI-code-library/images/odissei_logo.png\" style=\"float: right;\" width=\"250\" height=\"70\" />"
 author: 
   name: "Angelica Maineri"
   email: "angelica@odissei-data.nl"
@@ -21,6 +21,8 @@ suppressWarnings(library(DT))
 suppressWarnings(library(tidyverse))
 suppressWarnings(library(stringr))
 ```
+
+
 # Welcome
 Hello! Thank you for your interest in my project.
 
@@ -31,8 +33,7 @@ If you have comments, reach out to [Angelica Maineri](mailto:angelica@odissei-da
 Do you want to submit your own project and code to be added to the library? Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/AngelicaMaineri/ODISSEI-code-library) or send an email to [Angelica Maineri](mailto:angelica@odissei-data.nl).
 
 # Code libraries
-## CBS microdata
-
+## CBS microdata 
 ```{r loaddataCBS}
 df = read.csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects-clean_CBS.csv", encoding = "UTF-8")
 df$project_lead = gsub("<e8>", "è", df$project_lead)
@@ -57,4 +58,3 @@ DT::datatable(df2, escape = FALSE,
                             autoWidth = TRUE),
               rownames = FALSE)
 ```
-

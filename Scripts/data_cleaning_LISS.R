@@ -10,7 +10,7 @@ library(tidyverse)
 library(stringr)
 
 # Load data
-df = read.csv("C:/Users/angel/Documents/GitHub/ODISSEI-code-library/Data/odissei-projects_LISS.csv", encoding = "UTF-8")
+df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data/odissei-projects_LISS.csv", encoding = "UTF-8")
 
 #### Cleaning ------- 
 # add hyperlinks

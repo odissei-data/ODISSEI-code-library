@@ -28,7 +28,7 @@ The ODISSEI code library contains a collection of scripts detailing data process
 
 If you have comments, reach out tothe [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
 
-Do you want to submit your own project and code to be added to the library? Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/AngelicaMaineri/ODISSEI-code-library) or send an email to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
+Do you want to submit your own project and code to be added to the library? Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/odissei-data/ODISSEI-code-library) or send an email to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
 
 # Code libraries
 ## CBS microdata 

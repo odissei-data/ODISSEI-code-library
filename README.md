@@ -1,3 +1,6 @@
+# WARNING!
+Note this is the outdated version of the ODISSEI code library. Please visit https://github.com/odissei-data/ODISSEI-code-library and https://odissei-data.github.io/ODISSEI-code-library/ for the most recent version.
+
 # ODISSEI Code Library
 The [ODISSEI code library](https://angelicamaineri.github.io/ODISSEI-code-library) is a collection of code and scripts used to execute projects using the ODISSEI infrastructure. [ODISSEI](https://odissei-data.nl/en/) (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.
 

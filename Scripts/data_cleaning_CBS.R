@@ -25,6 +25,7 @@ df2 = df2 |>
 
 head(df2)
 
+colnames(df2) = c("Title", "CBS project nr.", "Project lead", "ODISSEI grant", "Publication", "Data", "Code", "Code Language")
 
 ## Export ----
 write.csv(df2, "Data/odissei-projects-clean_CBS.csv")

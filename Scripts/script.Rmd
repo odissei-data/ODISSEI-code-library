@@ -12,7 +12,8 @@ output:
     theme: cosmo
     toc: yes
     toc_float:
-      collapsed: true
+      collapsed: false
+    css: docs.css
 ---
 
 ```{r setup, include=FALSE}

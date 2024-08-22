@@ -25,9 +25,9 @@ suppressWarnings(library(stringr))
 
 
 # Welcome
-The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via [ODISSEI](https://odissei-data.nl/en/). ODISSEI (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.
+The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS panel data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via [ODISSEI](https://odissei-data.nl/en/).
 
-If you have comments, reach out tothe [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
+If you have comments, reach out to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
 
 Do you want to submit your own project and code to be added to the library? Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/odissei-data/ODISSEI-code-library) or send an email to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
 

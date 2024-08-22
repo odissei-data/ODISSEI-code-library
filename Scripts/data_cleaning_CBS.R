@@ -15,17 +15,19 @@ df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data
 #### Cleaning ------- 
 # add hyperlinks
 df2 = df |>
-  mutate(publication = paste("<a href=\"", publication, "\">", "doi</a>", sep = "")) |>
-  mutate(code = paste("<a href=\"", code, "\">", "link</a>", sep = "")) |>
-  mutate(project_lead = paste("<a href=\"", orcid, "\">", project_lead, "</a>", sep = ""))
+  mutate(publication = if_else(!is.na(publication), paste("<a href=\"", publication, "\">", "doi</a>", sep = ""), " ")) |>
+  mutate(project_lead = paste("<a href=\"", orcid, "\">", project_lead, "</a>", sep = "")) |>
+  mutate(title = paste("<a href=\"", code, "\">", title, "</a>", sep = ""))
 
 
 df2 = df2 |> 
-  select(-c("orcid"))
+  select(-c("orcid", "code"))
 
 head(df2)
 
-colnames(df2) = c("Title", "CBS project nr.", "Project lead", "ODISSEI grant", "Publication", "Data", "Code", "Code Language")
+colnames(df2) = c("Title", "CBS project nr.", "Project lead", "ODISSEI grant", "Publication", "Data", "Code Language")
+
+df2 = df2[,c(1,3,7,5,6,2,4)]
 
 ## Export ----
 write.csv(df2, "Data/odissei-projects-clean_CBS.csv")

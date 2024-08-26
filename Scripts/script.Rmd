@@ -36,7 +36,6 @@ Do you want to submit your own project and code to be added to the library? Plea
 ```{r loaddataCBS}
 df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data/odissei-projects-clean_CBS.csv", encoding = "UTF-8", check.names=FALSE)
 colnames(df)[1] = c("X")
-df$`Project lead` = gsub("<e8>", "è", df$`Project lead`)
 df = df |> dplyr:::select(-c("X")) 
 DT::datatable(df, escape = FALSE,
               filter = "top", 

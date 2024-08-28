@@ -21,7 +21,8 @@ submission_text: Please submit an issue using the Submission code issue template
       </a>
       <div class="dropdown">
         <button class="btn btn-outline btn-lg btn-secondary dropdown-toggle text-decoration-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <span x-text="activeTab"></span>
+          <span class="d-none d-md-inline" x-text="activeTab"></span>
+          <div class="d-inline d-md-none"><svg width="32" height="32" fill="#0ba4b3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M64 96h384v48H64zm0 136h384v48H64zm0 136h384v48H64z"/></svg></div>
         </button>
         <ul class="dropdown-menu">
           {% for library in page.libraries %}
@@ -46,9 +47,9 @@ submission_text: Please submit an issue using the Submission code issue template
             <p class="text-white fs-5 mb-3" style="color: #0ba4b3 !important">
               <span class="fw-bold">Erasmus University Rotterdam - ODISSEI</span> ·
               <a
-                href="mailto:fairsupport@odissei-data.nl"
+                href="mailto:{{site.email}}"
                 style="color: #0ba4b3 !important"
-                >fairsupport@odissei-data.nl</a
+                >{{site.email}}</a
               >
             </p>
             <h2 class="text-white">Welcome</h2>
@@ -97,7 +98,7 @@ submission_text: Please submit an issue using the Submission code issue template
         <thead>
           <tr>
             <th>#</th>
-            <th>Title</th>
+            <th width="30%">Title</th>
             <th>Project lead</th>
             <th>Code language</th>
             <th>Publication</th>
@@ -129,7 +130,7 @@ submission_text: Please submit an issue using the Submission code issue template
         <thead>
           <tr>
             <th>#</th>
-            <th>Title</th>
+            <th width="30%">Title</th>
             <th>Project lead</th>
             <th>Code Language</th>
             <th>Publication</th>

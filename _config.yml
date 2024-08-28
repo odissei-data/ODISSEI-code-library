@@ -1,0 +1,17 @@
+title: The ODISSEI Code Library
+description: The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS panel data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via ODISSEI.
+email: "fairsupport@odissei-data.nl"
+baseurl: "/ODISSEI-code-library" # the subpath of your site, e.g. /blog
+url: "https://odissei-data.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+# CSV reading
+csv_reader:
+  converters:
+    - numeric
+    - datetime
+  headers: true
+  encoding: utf-8

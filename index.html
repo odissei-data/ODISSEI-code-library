@@ -1,0 +1,158 @@
+---
+layout: default
+title: Home
+libraries:
+  - title: CBS microdata
+    file: cbs.csv
+  - title: LISS panel
+    file: liss.csv
+encoding: UTF-8
+heading: The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS panel data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via [ODISSEI](https://odissei-data.nl).
+subheading: If you have comments, reach out to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
+submission_text: Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/odissei-data/ODISSEI-code-library) or send an email to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
+---
+
+<!-- Bootstrap navigation bar -->
+<main x-data="{ activeTab: 'CBS microdata' }">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="{{'/assets/img/logo.png' | relative_url}}" class="img-fluid" /> 
+      </a>
+      <div class="dropdown">
+        <button class="btn btn-outline btn-lg btn-secondary dropdown-toggle text-decoration-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span x-text="activeTab"></span>
+        </button>
+        <ul class="dropdown-menu">
+          {% for library in page.libraries %}
+          <li><a href="#tables" class="dropdown-item" @click="activeTab = '{{library.title}}'; window.href='#tables';">{{ library.title }}</a></li> 
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>  
+  <div
+    class="mb-5 hero-bg"
+  >
+    <div
+      class="py-5"
+      style="background-color: rgba(0, 0, 0, 0.75)"
+    >
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-lg-2 flex align-items-center g-5">
+          <div class="col">
+            <h1 class="text-white fs-1">ODISSEI Code Library</h1>
+            <p class="text-white fs-4">ODISSEI FAIR support team</p>
+            <p class="text-white fs-5 mb-3" style="color: #0ba4b3 !important">
+              <span class="fw-bold">Erasmus University Rotterdam - ODISSEI</span> ·
+              <a
+                href="mailto:fairsupport@odissei-data.nl"
+                style="color: #0ba4b3 !important"
+                >fairsupport@odissei-data.nl</a
+              >
+            </p>
+            <h2 class="text-white">Welcome</h2>
+            {% assign heading = page.heading | markdownify %}
+            {% assign subheading = page.subheading | markdownify %}
+            <div class="heading-container">
+              {{ heading }}
+            </div>
+            <div class="heading-container">
+              {{ subheading }}
+            </div>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-center">
+              <div class="bg-white rounded rounded-3 p-5 shadow shadow-sm" style="max-width: 640px;">
+                <h3>
+                  Do you want to submit your own project and code to be added to the library?
+                </h3>
+                <p>
+                  {{page.submission_text | markdownify}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mb-5" id="tables">
+      <ul class="nav nav-pills mb-5">
+        {% for library in page.libraries %}
+        <li class="nav-item fw-bold">
+          <button
+            :class="{ 'nav-link active': activeTab === '{{library.title}}', 'nav-link': activeTab !== '{{library.title}}' }"
+            @click="activeTab = '{{library.title}}'"
+            class="fs-3"
+          >{{library.title}}</button> 
+        </li>
+        {% endfor %}
+      </ul>  
+    </ul>
+    <!-- LISS -->
+     <!-- Headers: Title, Project lead, Code language, Publication, Data, Link to data, ODISSEI grant -->
+    <div class="table-responsive" x-show="activeTab === 'LISS panel'">
+      <table class="table table-striped table-hover table-bordered" id="lissTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Project lead</th>
+            <th>Code language</th>
+            <th>Publication</th>
+            <th>Data</th>
+            <th>Link to data</th>
+            <th>ODISSEI grant</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in site.data.liss %}
+          <tr>
+            <td>{{forloop.index}}</td>
+            <td>{{row["Title"]}}</td>
+            <td>{{row["Project lead"]}}</td>
+            <td>{{row["Code Language"]}}</td>
+            <td>{{row["Publication"]}}</td>
+            <td>{{row["Data"]}}</td>
+            <td>{{row["Link to data"] | markdownify }}</a></td>
+            <td>{{row["ODISSEI grant"]}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <!-- CBS -->
+    <div class="table-responsive" x-show="activeTab === 'CBS microdata'">
+      <!--Titles: Title, Project lead, Code language, Publication, Data, CBS project nr., ODISSEI grant -->
+      <table class="table table-striped table-hover table-bordered" id="cbsTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Project lead</th>
+            <th>Code Language</th>
+            <th>Publication</th>
+            <th>Data</th>
+            <th>CBS project nr.</th>
+            <th>ODISSEI grant</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in site.data.cbs %}
+          <tr>
+            <td>{{ forloop.index }}</td>
+            <td width="30%">{{ row["Title"] }}</td>
+            <td width="10%">{{ row["Project lead"] }}</td>
+            <td width="10%">{{ row["Code Language"] }}</td>
+            <td width="10%">{{ row["Publication"] }}</td>
+            <td width="10%">{{ row["Data"] }}</td>
+            <td width="10%">{{ row["CBS project nr."] }}</td>
+            <td width="10%">{{ row["ODISSEI grant"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

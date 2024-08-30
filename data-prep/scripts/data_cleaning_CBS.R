@@ -30,6 +30,8 @@ colnames(df2) = c("Title", "CBS project nr.", "Project lead", "ODISSEI grant", "
 df2 = df2[,c(1,3,7,5,6,2,4)]
 
 df2$`Project lead` = gsub("<e8>", "è", df2$`Project lead`)
+df2$`Project lead` = gsub("<e9>", "é", df2$`Project lead`)
+
 
 ## Export ----
 write.csv(df2, "C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/_data/cbs.csv")

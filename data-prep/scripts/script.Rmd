@@ -1,0 +1,59 @@
+---
+title: "ODISSEI code library <img src=\"C:/Users/angel/Documents/GitHub/ODISSEI-code-library/images/odissei_logo.png\" style=\"float: right;\" width=\"250\" height=\"70\" />"
+author: 
+  name: "ODISSEI FAIR support team "
+  email: "fairsupport@odissei-data.nl"
+  affiliation: "Erasmus University Rotterdam - ODISSEI"
+date: '`r Sys.Date()`'
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = "UTF-8", output_file="C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/docs/index.html") })
+output: 
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float:
+      collapsed: false
+    css: docs.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+suppressWarnings(library(DT))
+suppressWarnings(library(tidyverse))
+suppressWarnings(library(stringr))
+```
+
+
+# Welcome
+The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS panel data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via [ODISSEI](https://odissei-data.nl/en/).
+
+If you have comments, reach out to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
+
+Do you want to submit your own project and code to be added to the library? Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/odissei-data/ODISSEI-code-library) or send an email to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
+
+# Code libraries
+## CBS microdata 
+```{r loaddataCBS}
+df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data/odissei-projects-clean_CBS.csv", encoding = "UTF-8", check.names=FALSE)
+colnames(df)[1] = c("X")
+df = df |> dplyr:::select(-c("X")) 
+DT::datatable(df, escape = FALSE,
+              filter = "top", 
+              options = list(dom = "ft", 
+                            pageLength = 1000, 
+                            autoWidth = TRUE),
+              rownames = FALSE)
+```
+
+## LISS panel
+```{r loaddataLISS}
+df2 = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data/odissei-projects-clean_LISS.csv", encoding = "UTF-8", check.names=FALSE)
+colnames(df2)[1] = c("X")
+df2 = df2 |> dplyr:::select(-c("X")) 
+DT::datatable(df2, escape = FALSE,
+              filter = "top", 
+              options = list(dom = "ft", 
+                            pageLength = 1000, 
+                            autoWidth = TRUE),
+              rownames = FALSE)
+```

@@ -1,12 +1,12 @@
 ---
-title: "ODISSEI code library <img src=\"C:/Users/angel/Documents/GitHub/ODISSEI-code-library/images/odissei_logo.png\" style=\"float: right;\" width=\"250\" height=\"70\" />"
+title: "ODISSEI code library"
 author: 
   name: "ODISSEI FAIR support team "
   email: "fairsupport@odissei-data.nl"
   affiliation: "Erasmus University Rotterdam - ODISSEI"
 date: '`r Sys.Date()`'
 knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = "UTF-8", output_file="C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/docs/index.html") })
+  rmarkdown::render(inputFile, encoding = "UTF-8", output_file="test.html") })
 output: 
   html_document:
     theme: cosmo
@@ -34,7 +34,8 @@ Do you want to submit your own project and code to be added to the library? Plea
 # Code libraries
 ## CBS microdata 
 ```{r loaddataCBS}
-df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data/odissei-projects-clean_CBS.csv", encoding = "UTF-8", check.names=FALSE)
+getwd()
+df = read.csv("~/GitHub/odissei/ODISSEI-code-library/_data/cbs.csv", encoding = "UTF-8", check.names=FALSE)
 colnames(df)[1] = c("X")
 df = df |> dplyr:::select(-c("X")) 
 DT::datatable(df, escape = FALSE,
@@ -47,7 +48,7 @@ DT::datatable(df, escape = FALSE,
 
 ## LISS panel
 ```{r loaddataLISS}
-df2 = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/Data/odissei-projects-clean_LISS.csv", encoding = "UTF-8", check.names=FALSE)
+df2 = read.csv("~/GitHub/odissei/ODISSEI-code-library/_data/liss.csv", encoding = "UTF-8", check.names=FALSE)
 colnames(df2)[1] = c("X")
 df2 = df2 |> dplyr:::select(-c("X")) 
 DT::datatable(df2, escape = FALSE,

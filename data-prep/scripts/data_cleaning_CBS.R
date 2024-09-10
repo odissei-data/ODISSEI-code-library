@@ -16,7 +16,7 @@ df = read.csv("./data-prep/data/odissei-projects_CBS.csv", encoding = "UTF-8")
 #### Cleaning ------- 
 
 df$project_lead = gsub("<e8>", "è", df$project_lead)
-df$project_lead = gsub("<e9>", "é", df$project_lead)
+df$project_lead = gsub("<e9?>", "é", df$project_lead)
 
 
 # sort alphabetically (by author)
@@ -24,9 +24,9 @@ df <- df[order(df$project_lead),]
 
 # add hyperlinks
 df2 = df |>
-  mutate(publication = if_else(!is.na(publication), paste("<a href=\"", publication, "\">", "doi</a>", sep = ""), " ")) |>
-  mutate(project_lead = paste("<a href=\"", orcid, "\">", project_lead, "</a>", sep = "")) |>
-  mutate(title = paste("<a href=\"", code, "\">", title, "</a>", sep = ""))
+  mutate(publication = if_else(!is.na(publication), paste("<a href=\"", publication, "\"target=\"_blank\">", "doi</a>", sep = ""), " ")) |>
+  mutate(project_lead = paste("<a href=\"", orcid, "\"target=\"_blank\">", project_lead, "</a>", sep = "")) |>
+  mutate(title = paste("<a href=\"", code, "\"target=\"_blank\">", title, "</a>", sep = ""))
 
 
 df2 = df2 |> 

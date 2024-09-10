@@ -20,14 +20,14 @@ df <- df[order(df$project_lead),]
 
 # add hyperlinks
 df2 = df |>
-  mutate(publication = if_else(!is.na(publication), paste("<a href=\"", publication, "\">", "doi</a>", sep = ""), " ")) |>
-  mutate(project_lead = paste("<a href=\"", orcid, "\">", project_lead, "</a>", sep = "")) |>
+  mutate(publication = if_else(!is.na(publication), paste("<a href=\"", publication, "\"target=\"_blank\">", "doi</a>", sep = ""), " ")) |>
+  mutate(project_lead = paste("<a href=\"", orcid, "\"target=\"_blank\">", project_lead, "</a>", sep = "")) |>
   mutate(title = paste("<a href=\"", code, "\"target=\"_blank\">", title, "</a>", sep = ""))
 
 
 df2$link_data = gsub('https://','<a href="https://', df2$link_data )
-df2$link_data = gsub('*$','">data</a>', df2$link_data )
-df2$link_data = gsub(';','">data</a>;', df2$link_data )
+df2$link_data = gsub('*$','"target="_blank">data</a>', df2$link_data )
+df2$link_data = gsub(';','"target="_blank">data</a>;', df2$link_data )
 df2$link_data[df2$link_data=='\">data</a>'] = ""
 
 df2$link_data

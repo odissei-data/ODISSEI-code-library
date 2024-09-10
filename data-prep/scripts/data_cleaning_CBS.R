@@ -10,7 +10,8 @@ library(tidyverse)
 
 
 # Load data
-df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/data-prep/data/odissei-projects_CBS.csv", encoding = "UTF-8")
+getwd()
+df = read.csv("./data-prep/data/odissei-projects_CBS.csv", encoding = "UTF-8")
 
 #### Cleaning ------- 
 # add hyperlinks
@@ -34,7 +35,7 @@ df2$`Project lead` = gsub("<e9>", "é", df2$`Project lead`)
 
 
 ## Export ----
-write.csv(df2, "C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/_data/cbs.csv")
+write.csv(df2, "./_data/cbs.csv")
 
 
 

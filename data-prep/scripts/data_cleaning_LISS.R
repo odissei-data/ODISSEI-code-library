@@ -10,7 +10,8 @@ library(tidyverse)
 library(stringr)
 
 # Load data
-df = read.csv("C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/data-prep/data/odissei-projects_LISS.csv", encoding = "UTF-8")
+getwd()
+df = read.csv("./data-prep/data/odissei-projects_LISS.csv", encoding = "UTF-8")
 
 #### Cleaning ------- 
 # add hyperlinks
@@ -39,4 +40,4 @@ colnames(df2) = c("Title", "Project lead", "ODISSEI grant", "Publication", "Data
 df2 = df2[,c(1,2,7,4,5,6,3)]
 
 ## Export ----
-write.csv(df2, "C:/Users/angel/Documents/GitHub/odissei/ODISSEI-code-library/_data/liss.csv")
+write.csv(df2, "./_data/liss.csv")

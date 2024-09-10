@@ -26,8 +26,8 @@ df2 = df |>
 
 
 df2$link_data = gsub('https://','<a href="https://', df2$link_data )
-df2$link_data = gsub('*$','"target="_blank">data</a>', df2$link_data )
-df2$link_data = gsub(';','"target="_blank">data</a>;', df2$link_data )
+df2$link_data = gsub('*$','"target=\"_blank\">data</a>', df2$link_data )
+df2$link_data = gsub(';','"target=\"_blank\">data</a>;', df2$link_data )
 df2$link_data[df2$link_data=='\">data</a>'] = ""
 
 df2$link_data

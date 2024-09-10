@@ -14,6 +14,10 @@ getwd()
 df = read.csv("./data-prep/data/odissei-projects_LISS.csv", encoding = "UTF-8")
 
 #### Cleaning ------- 
+
+# sort alphabetically (by author)
+df <- df[order(df$project_lead),]
+
 # add hyperlinks
 df2 = df |>
   mutate(publication = if_else(!is.na(publication), paste("<a href=\"", publication, "\">", "doi</a>", sep = ""), " ")) |>

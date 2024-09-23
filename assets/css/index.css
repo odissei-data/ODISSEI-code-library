@@ -73,8 +73,8 @@ color: #098d9a;
   
   .nav-pills .nav-link.active {
     color: #ffffff;
-    background-color: #0ba4b3;
-    border-color: #0ba4b3;
+    background-color: #76EAA1;
+    border-color: #76EAA1;
   }
   
   .nav-pills .nav-item:last-child .nav-link {
@@ -89,7 +89,7 @@ color: #098d9a;
   /* Optional: Add a box shadow on hover and for active state */
   .nav-pills .nav-link:hover,
   .nav-pills .nav-link.active {
-    box-shadow: 0 2px 5px rgba(11, 164, 179, 0.3);
+    box-shadow: 0 2px 5px rgba(118, 234, 161, 0.3);
   }
 
   /* Dropdown button */

@@ -11,7 +11,7 @@ library(stringr)
 
 # Load data
 getwd()
-df = read.csv("./data-prep/data/odissei-projects_LISS.csv", encoding = "UTF-8")
+df = read.csv("~/GitHub/odissei/ODISSEI-code-library/data-prep/data/odissei-projects_LISS.csv", encoding = "UTF-8")
 
 #### Cleaning ------- 
 
@@ -44,4 +44,4 @@ colnames(df2) = c("Title", "Project lead", "ODISSEI grant", "Publication", "Data
 df2 = df2[,c(1,2,7,4,5,6,3)]
 
 ## Export ----
-write.csv(df2, "./_data/liss.csv")
+write.csv(df2, "~/GitHub/odissei/ODISSEI-code-library/_data/liss.csv")

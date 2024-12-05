@@ -17,6 +17,7 @@ df = read.csv("~/GitHub/odissei/ODISSEI-code-library/data-prep/data/odissei-proj
 
 df$project_lead = gsub("<e8>", "è", df$project_lead)
 df$project_lead = gsub("<e9?>", "é", df$project_lead)
+df$project_lead = gsub("<e1?>", "á", df$project_lead)
 
 
 # sort alphabetically (by author)

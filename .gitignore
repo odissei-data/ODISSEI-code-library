@@ -44,3 +44,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Jekyll generated:
+_site

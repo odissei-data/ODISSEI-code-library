@@ -144,14 +144,18 @@ submission_text: Please submit an issue using the Submission code issue template
           {% for row in site.data.cbs %}
           <tr>
             <td>{{ forloop.index }}</td>
-            <td width="30%">{{ row["Title"] }}</td>
-            <td width="10%">{{ row["Project lead"] }}</td>
-            <td width="10%">{{ row["Code Language"] }}</td>
-            <td width="10%">{{ row["Publication"] }}</td>
-            <td width="10%">{{ row["Data"] }}</td>
-            <td width="10%">{{ row["Data produced"] }}</td>
-            <td width="10%">{{ row["CBS project nr."] }}</td>
-            <td width="10%">{{ row["ODISSEI grant"] }}</td>
+            <td width="30%"><a target="_blank" href='{{ row["code"] }}'>{{ row["title"] }}</a></td>
+            <td width="10%">{{ row["project_lead"] }}</td>
+            <td width="10%">{{ row["programming language"] }}</td>
+            <td width="10%"><a target="_blank" href='{{ row["publication"] }}'>doi</a></td>
+            <td width="10%">{{ row["data used"] }}</td>
+            <td width="10%">
+              {% assign links = row["data produced"] | split: ";" %}
+              {% for link in links %}
+              <a href="{{link}}">{{ link }}</a>
+              {% endfor %}
+            <td width= "5%">{{ row["CBS_project_nr"] }}</td>
+            <td width="10%">{{ row["ODISSEI_grant"] }}</td>
           </tr>
           {% endfor %}
         </tbody>

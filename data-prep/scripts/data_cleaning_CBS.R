@@ -11,7 +11,7 @@ library(tidyverse)
 
 # Load data
 getwd()
-df = read.csv("~/GitHub/odissei/ODISSEI-code-library/data-prep/data/odissei-projects_CBS.csv", encoding = "UTF-8")
+df = read.csv("./data-prep/data/odissei-projects_CBS.csv", encoding = "UTF-8")
 
 #### Cleaning ------- 
 
@@ -35,7 +35,7 @@ df2 = df2 |>
 
 head(df2)
 
-colnames(df2) = c("Title", "CBS project nr.", "Project lead", "ODISSEI grant", "Publication", "Data", "Code Language")
+colnames(df2) = c("Title", "CBS project nr.", "Project lead", "ODISSEI grant", "Publication", "Data", "Data produced", "Code Language")
 
 df2 = df2[,c(1,3,7,5,6,2,4)]
 
@@ -44,7 +44,7 @@ df2 = df2[,c(1,3,7,5,6,2,4)]
 
 
 ## Export ----
-write.csv(df2, "~/GitHub/odissei/ODISSEI-code-library/_data/cbs.csv")
+write.csv(df2, "./_data/cbs.csv")
 
 
 

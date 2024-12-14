@@ -111,13 +111,18 @@ submission_text: Please submit an issue using the Submission code issue template
           {% for row in site.data.liss %}
           <tr>
             <td>{{forloop.index}}</td>
-            <td>{{row["Title"]}}</td>
-            <td>{{row["Project lead"]}}</td>
-            <td>{{row["Code Language"]}}</td>
-            <td>{{row["Publication"]}}</td>
-            <td>{{row["Data"]}}</td>
-            <td>{{row["Link to data"] | markdownify }}</a></td>
-            <td>{{row["ODISSEI grant"]}}</td>
+            <td><a target="_blank" href='{{ row["code"] }}'>{{ row["title"] }}</a></td>
+            <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
+            <td>{{ row["programming language"] }}</td>
+            <td><a target="_blank" href='{{ row["publication"] }}'>doi</a></td>
+            <td>{{ row["ldata"] }}</a></td>
+            <td width="10%">
+              {% assign links = row["link_data"] | split: ";" %}
+              {% for link in links %}
+              <a href="{{link}}">{{ link }}</a>
+              {% endfor %}
+            </td>
+            <td>{{row["ODISSEI_grant"]}}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -154,6 +159,7 @@ submission_text: Please submit an issue using the Submission code issue template
               {% for link in links %}
               <a href="{{link}}">{{ link }}</a>
               {% endfor %}
+            </td>
             <td width= "5%">{{ row["CBS_project_nr"] }}</td>
             <td width="10%">{{ row["ODISSEI_grant"] }}</td>
           </tr>

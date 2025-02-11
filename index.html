@@ -150,7 +150,7 @@ submission_text: Please submit an issue using the Submission code issue template
           <tr>
             <td>{{ forloop.index }}</td>
             <td width="30%"><a target="_blank" href='{{ row["code"] }}'>{{ row["title"] }}</a></td>
-            <td width="10%">{{ row["project_lead"] }}</td>
+            <td width="10%"><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
             <td width="10%">{{ row["programming language"] }}</td>
             <td width="10%"><a target="_blank" href='{{ row["publication"] }}'>doi</a></td>
             <td width="10%">{{ row["data used"] }}</td>

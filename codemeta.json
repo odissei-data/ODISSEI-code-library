@@ -1,0 +1,65 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Software portal",
+    "author": [
+        {
+            "id": "https://orcid.org/0000-0002-6978-5278",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "ODISSEI"
+            },
+            "familyName": "Maineri",
+            "givenName": "Angelica"
+        }
+    ],
+    "codeRepository": "https://github.com/odissei-data/ODISSEI-code-library",
+    "contributor": [
+        {
+            "id": "_:contributor_1",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "VU Amsterdam"
+            },
+            "familyName": "van Ossenbruggen",
+            "givenName": "Jacco"
+        },
+        {
+            "id": "_:contributor_2",
+            "type": "Person",
+            "familyName": "Udurawana",
+            "givenName": "Sajith"
+        },
+        {
+            "id": "https://orcid.org/0000-0002-0079-2533",
+            "type": "Person",
+            "email": "a.valdestilhas@vu.nl",
+            "familyName": "Valdestilhas",
+            "givenName": "Andre"
+        }
+    ],
+    "dateCreated": "2023-06-26",
+    "description": "The ODISSEI code library is a collection of code and scripts used to execute projects using the ODISSEI infrastructure. ODISSEI (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.",
+    "funder": {
+        "type": "Organization",
+        "name": "SSHOC-NL"
+    },
+    "identifier": "https://odissei-data.github.io/ODISSEI-code-library/",
+    "keywords": [
+        "Odissei",
+        "codelibrary"
+    ],
+    "name": "Odissei Code Library",
+    "programmingLanguage": "Ruby",
+    "version": "1.0",
+    "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library",
+    "codemeta:continuousIntegration": {
+        "id": "https://github.com/odissei-data/ODISSEI-code-library"
+    },
+    "developmentStatus": "active",
+    "funding": "SSHOC-NL",
+    "issueTracker": "https://github.com/odissei-data/ODISSEI-code-library/issues",
+    "referencePublication": "https://doi.org/10.5281/zenodo.4302096"
+}

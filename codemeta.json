@@ -17,7 +17,7 @@
     "codeRepository": "https://github.com/odissei-data/ODISSEI-code-library",
     "contributor": [
         {
-            "id": "_:contributor_1",
+            "id": "https://orcid.org/0000-0002-7748-4715",
             "type": "Person",
             "affiliation": {
                 "type": "Organization",
@@ -52,6 +52,8 @@
         "codelibrary"
     ],
     "name": "Odissei Code Library",
+    "readme": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
+    "license": "http://www.apache.org/licenses/LICENSE-2.0",
     "programmingLanguage": "Ruby",
     "version": "1.0",
     "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library",

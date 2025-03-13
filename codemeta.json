@@ -53,6 +53,7 @@
     ],
     "name": "Odissei Code Library",
     "readme": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
+    "buildInstructions": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "license": "http://www.apache.org/licenses/LICENSE-2.0",
     "programmingLanguage": "Ruby",
     "version": "1.0",
@@ -63,5 +64,8 @@
     "developmentStatus": "active",
     "funding": "SSHOC-NL",
     "issueTracker": "https://github.com/odissei-data/ODISSEI-code-library/issues",
-    "referencePublication": "https://doi.org/10.5281/zenodo.4302096"
+    "referencePublication": {
+        "@type": "ScholarlyArticle",
+        "id": "https://doi.org/10.5281/zenodo.4302096"
+    }
 }

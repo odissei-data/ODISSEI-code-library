@@ -15,3 +15,9 @@ Commit your changes to (a branch  of) the GitHub repository.
 
 ## Step 4: Admire the result
 Once the pull request is accepted, and the checks are all successful, the result will be visible on the [ODISSEI code library](https://odissei-data.github.io/ODISSEI-code-library/) within a few minutes.
+
+## Local testing
+If you would like to test locally, see [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll). Once you have installed jekyll, you can simply run a local copy on your own machine by starting a server on the command line with:
+```
+$ bundle exec jekyll serve
+```

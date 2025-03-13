@@ -1,7 +1,12 @@
 {
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "type": "SoftwareSourceCode",
-    "applicationCategory": "Software portal",
+    "applicationCategory": [ 
+        "Software portal", 
+        "https://w3id.org/nwo-research-fields#Sociology", "https://w3id.org/nwo-research-fields#CommunicationScience",
+        "https://w3id.org/nwo-research-fields#Demography", "https://w3id.org/nwo-research-fields#Economics",
+        "ttps://vocabs.dariah.eu/tadirah/disseminating"
+        ],
     "author": [
         {
             "id": "https://orcid.org/0000-0002-6978-5278",

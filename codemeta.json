@@ -15,6 +15,7 @@
                 "type": "Organization",
                 "name": "ODISSEI"
             },
+            "email":"fairsupport@odissei-data.nl",           
             "familyName": "Maineri",
             "givenName": "Angelica"
         }
@@ -61,7 +62,7 @@
     "buildInstructions": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "license": "http://www.apache.org/licenses/LICENSE-2.0",
     "programmingLanguage": "Ruby",
-    "version": "1.0",
+    "version": "1.0.1",
     "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library",
     "codemeta:continuousIntegration": {
         "id": "https://github.com/odissei-data/ODISSEI-code-library"

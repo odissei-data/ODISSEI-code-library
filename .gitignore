@@ -47,3 +47,6 @@ rsconnect/
 
 # Jekyll generated:
 _site
+
+# ruby/bundle generated:
+Gemfile.lock

@@ -7,19 +7,19 @@
     ],
     "type": "SoftwareSourceCode",
     "applicationCategory": [ 
-        "https://w3id.org/nwo-research-fields#CommunicationScience",
-        "https://w3id.org/nwo-research-fields#Demography",
-        "https://w3id.org/nwo-research-fields#Economics", 
-        "https://w3id.org/nwo-research-fields#LifeSciences", 
-        "https://w3id.org/nwo-research-fields#Medicine", 
-        "https://w3id.org/nwo-research-fields#Psychology", 
-        "https://w3id.org/nwo-research-fields#EducationalSciences",
-        "https://w3id.org/nwo-research-fields#Pedagogics",
-        "https://w3id.org/nwo-research-fields#Law", 
-        "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience", 
-        "https://w3id.org/nwo-research-fields#GeographyPlanning", 
-        "https://w3id.org/nwo-research-fields#Sociology", 
-        "https://vocabs.dariah.eu/tadirah/disseminating"
+        { "@id": "https://w3id.org/nwo-research-fields#CommunicationScience"},
+        { "@id": "https://w3id.org/nwo-research-fields#Demography"},
+        { "@id": "https://w3id.org/nwo-research-fields#Economics"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#LifeSciences"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#Medicine"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#Psychology"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#EducationalSciences"},
+        { "@id": "https://w3id.org/nwo-research-fields#Pedagogics",
+        { "@id": "https://w3id.org/nwo-research-fields#Law"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#GeographyPlanning"}, 
+        { "@id": "https://w3id.org/nwo-research-fields#Sociology"},
+        { "@id": "https://vocabs.dariah.eu/tadirah/disseminating"}
         ],
     "author": [
         {
@@ -108,6 +108,14 @@
     "buildInstructions": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "license": "http://www.apache.org/licenses/LICENSE-2.0",
     "programmingLanguage": "Ruby",
+    "softwareHelp": [
+        {
+          "@id": "https://odissei-data.github.io/ODISSEI-code-library/",
+          "@type": "WebSite",
+          "name": "Odissei Code Lybrary",
+          "url": "https://odissei-data.github.io/ODISSEI-code-library/"
+        }
+    ],
     "version": "1.0.1",
     "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library",
     "codemeta:continuousIntegration": {

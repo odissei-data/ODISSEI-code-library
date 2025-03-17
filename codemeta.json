@@ -14,7 +14,7 @@
         { "@id": "https://w3id.org/nwo-research-fields#Medicine"}, 
         { "@id": "https://w3id.org/nwo-research-fields#Psychology"}, 
         { "@id": "https://w3id.org/nwo-research-fields#EducationalSciences"},
-        { "@id": "https://w3id.org/nwo-research-fields#Pedagogics",
+        { "@id": "https://w3id.org/nwo-research-fields#Pedagogics"},
         { "@id": "https://w3id.org/nwo-research-fields#Law"}, 
         { "@id": "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience"}, 
         { "@id": "https://w3id.org/nwo-research-fields#GeographyPlanning"}, 

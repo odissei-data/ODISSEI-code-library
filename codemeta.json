@@ -1,5 +1,10 @@
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": [
+        "https://w3id.org/codemeta/3.0",
+        "http://schema.org",
+        "https://w3id.org/software-types",
+        "https://w3id.org/software-iodata"
+    ],
     "type": "SoftwareSourceCode",
     "applicationCategory": [ 
         "https://w3id.org/nwo-research-fields#CommunicationScience",

@@ -2,9 +2,18 @@
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "type": "SoftwareSourceCode",
     "applicationCategory": [ 
-        "Software portal", 
-        "https://w3id.org/nwo-research-fields#Sociology", "https://w3id.org/nwo-research-fields#CommunicationScience",
-        "https://w3id.org/nwo-research-fields#Demography", "https://w3id.org/nwo-research-fields#Economics",
+        "https://w3id.org/nwo-research-fields#CommunicationScience",
+        "https://w3id.org/nwo-research-fields#Demography",
+        "https://w3id.org/nwo-research-fields#Economics", 
+        "https://w3id.org/nwo-research-fields#LifeSciences", 
+        "https://w3id.org/nwo-research-fields#Medicine", 
+        "https://w3id.org/nwo-research-fields#Psychology", 
+        "https://w3id.org/nwo-research-fields#EducationalSciences",
+        "https://w3id.org/nwo-research-fields#Pedagogics",
+        "https://w3id.org/nwo-research-fields#Law", 
+        "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience", 
+        "https://w3id.org/nwo-research-fields#GeographyPlanning", 
+        "https://w3id.org/nwo-research-fields#Sociology", 
         "https://vocabs.dariah.eu/tadirah/disseminating"
         ],
     "author": [
@@ -23,10 +32,11 @@
     "codeRepository": "https://github.com/odissei-data/ODISSEI-code-library",
     "contributor": [
         {
-            "id": "https://orcid.org/0000-0002-7748-4715",
-            "type": "Person",
+            "@id": "https://orcid.org/0000-0002-7748-4715",
+            "@type": "Person",
             "affiliation": {
-                "type": "Organization",
+                "@type": "Organization",
+                "@id": "https://ror.org/008xxew50",
                 "name": "VU Amsterdam"
             },
             "familyName": "van Ossenbruggen",
@@ -39,8 +49,13 @@
             "givenName": "Sajith"
         },
         {
-            "id": "https://orcid.org/0000-0002-0079-2533",
-            "type": "Person",
+            "@id": "https://orcid.org/0000-0002-0079-2533",
+            "@type": "Person",
+            "affiliation": {  
+                "@type": "Organization",
+                "@id": "https://ror.org/008xxew50",
+                "name": "VU Amsterdam"
+            },
             "email": "a.valdestilhas@vu.nl",
             "familyName": "Valdestilhas",
             "givenName": "Andre"
@@ -48,10 +63,36 @@
     ],
     "dateCreated": "2023-06-26",
     "description": "The ODISSEI code library is a collection of code and scripts used to execute projects using the ODISSEI infrastructure. ODISSEI (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.",
-    "funder": {
-        "type": "Organization",
-        "name": "SSHOC-NL"
-    },
+    "funding": 
+    [
+        {
+            "@type": "Grant",
+            "name": "ODISSEI: Better Infrastructure, Better Science, Better Society (NWO Grant 184.035.014)",
+            "funder": {
+                "@type": "Organization",
+                "name": "NWO",
+                "@id": "https://www.nwo.nl"
+                }
+            },
+            {
+                "@type": "Grant",
+                "name": "Building a FAIR Expertise Hub for the social sciences",
+                "funder": {
+                    "@type": "Organization",
+                    "name": "PDI-SSH",
+                    "url": "https://pdi-ssh.nl/nl/2021/11/gehonoreerde-projecten-2021-call/"
+                }
+            },
+            {
+                "@type": "Grant",
+                "name": "Social Science and Humanities Open Cloud for the Netherlands (SSHOC-NL, NWO Grant 184.036.020)",
+                "funder": {
+                    "@type": "Organization",
+                    "name": "NWO",
+                    "@id": "https://www.nwo.nl"
+                    }
+            }
+        ],
     "identifier": "https://odissei-data.github.io/ODISSEI-code-library/",
     "keywords": [
         "Odissei",
@@ -68,7 +109,6 @@
         "id": "https://github.com/odissei-data/ODISSEI-code-library"
     },
     "developmentStatus": [ "https://www.repostatus.org/#active", "https://w3id.org/research-technology-readiness-levels#Level8Complete" ],
-    "funding": "SSHOC-NL",
     "issueTracker": "https://github.com/odissei-data/ODISSEI-code-library/issues",
     "referencePublication": {
         "@type": "ScholarlyArticle",

@@ -117,9 +117,9 @@
         }
     ],
     "version": "1.0.1",
-    "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library",
+    "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library/deployments",
     "codemeta:continuousIntegration": {
-        "id": "https://github.com/odissei-data/ODISSEI-code-library"
+        "id": "https://github.com/odissei-data/ODISSEI-code-library/deployments"
     },
     "developmentStatus": [ "https://www.repostatus.org/#active", "https://w3id.org/research-technology-readiness-levels#Level8Complete" ],
     "issueTracker": "https://github.com/odissei-data/ODISSEI-code-library/issues",

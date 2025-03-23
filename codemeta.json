@@ -100,10 +100,10 @@
         ],
     "identifier": "https://odissei-data.github.io/ODISSEI-code-library/",
     "keywords": [
-        "Odissei",
+        "ODISSEI",
         "codelibrary"
     ],
-    "name": "Odissei Code Library",
+    "name": "ODISSEI Code Library",
     "readme": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "buildInstructions": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "license": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -112,7 +112,7 @@
         {
           "@id": "https://odissei-data.github.io/ODISSEI-code-library/",
           "@type": "WebSite",
-          "name": "Odissei Code Lybrary",
+          "name": "ODISSEI Code Library",
           "url": "https://odissei-data.github.io/ODISSEI-code-library/"
         }
     ],

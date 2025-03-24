@@ -107,6 +107,7 @@
     "readme": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "buildInstructions": "https://github.com/odissei-data/ODISSEI-code-library/blob/main/README.md",
     "license": "http://www.apache.org/licenses/LICENSE-2.0",
+    "thumbnailUrl": "https://raw.githubusercontent.com/odissei-data/odissei-kg/refs/heads/acceptance/odissei.png",
     "programmingLanguage": "Ruby",
     "softwareHelp": [
         {

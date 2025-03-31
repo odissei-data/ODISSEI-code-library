@@ -4,7 +4,7 @@ Sex and gender differences in primary care help-seeking for common somatic sympt
 Divorce and diverging poverty rates: A risk and vulnerability approach,,Bram Hogendoorn,https://orcid.org/0000-0002-5805-4066,NA,https://doi.org/10.1111/jomf.12629,CBS microdata,,https://osf.io/mkcq5/,Stata
 Netherlands Integrated Database of Inequality in Organizations (NIDIO),9607,Christoph Janietz,https://orcid.org/0009-0006-0888-5650,NA,,CBS microdata,https://doi.org/10.34894/YQIIQV; https://doi.org/10.34894/63XWJB,https://osf.io/9b2xh/,Stata
 "Occupations, organizations, and the structure of wage inequality in the Netherlands",8419,Christoph Janietz,https://orcid.org/0009-0006-0888-5650,NA,https://doi.org/10.1016/j.rssm.2019.100468,CBS microdata,,https://osf.io/sf4q6/,Stata; R
-Temporary employment and wage inequality over the life course,8419,Christoph Janietz,https://orcid.org/0009-0006-0888-5650,NA,https://doi.org/10.1093/esr/jcad075,CBS microdata,,https://osf.io/y7tnx/,"Stata, R"
+Temporary employment and wage inequality over the life course,8419,Christoph Janietz,https://orcid.org/0009-0006-0888-5650,NA,https://doi.org/10.1093/esr/jcad075,CBS microdata,,https://osf.io/y7tnx/,"Stata; R"
 Occupations and careers within organizations: Do organizations facilitate unequal wage growth?,8419,Christoph Janietz,https://orcid.org/0009-0006-0888-5650,NA,https://doi.org/10.1016/j.ssresearch.2024.103005,CBS microdata,,https://osf.io/eymg8/,Stata; R
 "Essential Workers and Wage Inequality: Wage Differentials before and during the Covid-19 Pandemic, 2006 to 2022",8419,Christoph Janietz,https://orcid.org/0009-0006-0888-5650,NA,https://doi.org/10.1162/euso_a_00020,CBS microdata,,https://osf.io/yt4dj/,Stata; R
 "Children's strains, parents' pains? How adult children's union dissolution influences older parents' health",,Damiano Uccheddu,https://orcid.org/0000-0002-6215-203X,NA,https://doi.org/10.20377/jfr-774,CBS microdata; SHARE,,https://doi.org/10.5281/zenodo.7443895,Stata
@@ -34,3 +34,4 @@ Inequalities in Healthcare use during the COVID-19 pandemic,8951,Mark Verhagen,h
 Evaluating the causal relationship between educational attainment and mental health,8590,Perline Demange,https://orcid.org/0000-0002-7061-8354,MAD2022,https://doi.org/10.1101/2023.01.26.23285029,CBS microdata,,https://github.com/PerlineDemange/CBS-MR,R
 "Money, Birth, Gender: Explaining Unequal Earnings Trajectories following Parenthood",9120,Weverthon Barbosa Machado,https://orcid.org/0000-0001-9919-4738,MAD2021,https://doi.org/10.15195/v10.a14,CBS microdata,,https://osf.io/gmcjv/,R
 What Happens to Workers at Firms that Automate?,8455,Wiljan van den Berge,https://orcid.org/0000-0002-9147-0862,NA,https://doi.org/10.1162/rest_a_01284,CBS microdata,,https://osf.io/k4vjq/,Stata
+

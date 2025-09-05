@@ -114,7 +114,11 @@ submission_text: Please submit an issue using the Submission code issue template
             <td><a target="_blank" href='{{ row["code"] }}'>{{ row["title"] }}</a></td>
             <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
             <td>{{ row["programming language"] }}</td>
-            <td><a target="_blank" href='{{ row["publication"] }}'>doi</a></td>
+            <td width="10%">
+                {% if row.publication %}
+                <a target="_blank" href="{{ row.publication }}">doi</a>
+                {% endif %}
+            </td>
             <td>{{ row["ldata"] }}</a></td>
             <td width="10%">
               {% assign links = row["link_data"] | split: ";" %}

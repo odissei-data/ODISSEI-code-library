@@ -6,8 +6,10 @@ libraries:
     file: cbs.csv
   - title: LISS panel
     file: liss.csv
+  - title: Data Donation (Port)
+    file: port.csv
 encoding: UTF-8
-heading: The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS panel data and CBS (Statistics Netherlands) microdata. Some of the projects receive funding via [ODISSEI](https://odissei-data.nl).
+heading: The ODISSEI code library contains a collection of scripts detailing data processing and analysis steps of projects using LISS panel data, CBS (Statistics Netherlands) microdata or Port software. Some of the projects receive funding via [ODISSEI](https://odissei-data.nl).
 subheading: If you have comments, reach out to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
 submission_text: Please submit an issue using the Submission code issue template on the [GitHub repository](https://github.com/odissei-data/ODISSEI-code-library) or send an email to the [ODISSEI FAIR support team](mailto:fairsupport@odissei-data.nl).
 ---
@@ -170,6 +172,45 @@ submission_text: Please submit an issue using the Submission code issue template
             </td>
             <td width= "5%">{{ row["CBS_project_nr"] }}</td>
             <td width="10%">{{ row["ODISSEI_grant"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+<!-- Data Donation (Port)-->
+     <!-- Headers: Platform, Project lead, Publication, Recruitment, Link to data, ODISSEI grant -->
+    <div class="table-responsive" x-show="activeTab === 'Data Donation (Port)'">
+      <table class="table table-striped table-hover table-bordered" id="portTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Platform</th>
+            <th>Project lead</th>
+            <th>Publication</th>
+            <th>Recruitment</th>
+            <th>Link to data</th>
+            <th>ODISSEI grant</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in site.data.port %}
+          <tr>
+            <td>{{forloop.index}}</td>
+            <td><a target="_blank" href='{{ row["code"] }}'>{{ row["platform"] }}</a></td>
+            <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
+            <td width="10%">
+                {% if row.publication %}
+                <a target="_blank" href="{{ row.publication }}">doi</a>
+                {% endif %}
+            </td>
+            <td>{{ row["ldata"] }}</a></td>
+            <td width="10%">
+              {% assign links = row["data"] | split: ";" %}
+              {% for link in links %}
+              <a href="{{link}}">{{ link }}</a>
+              {% endfor %}
+            </td>
+            <td>{{row["odissei_grant"]}}</td>
           </tr>
           {% endfor %}
         </tbody>

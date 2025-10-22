@@ -121,7 +121,7 @@ submission_text: Please submit an issue using the Submission code issue template
                 <a target="_blank" href="{{ row.publication }}">doi</a>
                 {% endif %}
             </td>
-            <td>{{ row["ldata"] }}</a></td>
+            <td>{{ row["data"] }}</a></td>
             <td width="10%">
               {% assign links = row["link_data"] | split: ";" %}
               {% for link in links %}
@@ -185,10 +185,12 @@ submission_text: Please submit an issue using the Submission code issue template
           <tr>
             <th>#</th>
             <th>Platform</th>
+	    <th>Extraction Script</th>
+	    <th>Analysis Script</th>
             <th>Project lead</th>
             <th>Publication</th>
             <th>Recruitment</th>
-            <th>Link to data</th>
+            <th>Data</th>
             <th>ODISSEI grant</th>
           </tr>
         </thead>
@@ -196,14 +198,16 @@ submission_text: Please submit an issue using the Submission code issue template
           {% for row in site.data.port %}
           <tr>
             <td>{{forloop.index}}</td>
-            <td><a target="_blank" href='{{ row["code"] }}'>{{ row["platform"] }}</a></td>
+            <td>{{row["platform"]}}</td>
+	    <td><a target="_blank" href='{{ row["extractionscript"] }}'>{{row["extractionscript"]}}</a</td>
+            <td><a target="_blank" href='{{ row["analysis"] }}'>{{row["analysis"]}}</a</td>
             <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
             <td width="10%">
                 {% if row.publication %}
                 <a target="_blank" href="{{ row.publication }}">doi</a>
                 {% endif %}
             </td>
-            <td>{{ row["ldata"] }}</a></td>
+            <td>{{ row["participants"] }}</a></td>
             <td width="10%">
               {% assign links = row["data"] | split: ";" %}
               {% for link in links %}

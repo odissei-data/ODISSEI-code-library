@@ -4,7 +4,7 @@ email: "fairsupport@odissei-data.nl"
 baseurl: "/ODISSEI-code-library" # the subpath of your site, e.g. /blog
 url: "https://odissei-data.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-exclude: ["README.md", "**/README.md", "*.Rproj", "data-prep/"]
+exclude: ["README.md", "**/README.md", "*.Rproj", "data-prep/", vendor]
 
 # Build settings
 plugins:

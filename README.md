@@ -8,10 +8,10 @@ Do you want to submit your own project and code to be added to the library? Plea
 ## Step 1: Clone repo
 
 ## Step 2: Update data
-Edit the source files `_data/cbs.csv` or `_data/liss.csv`.
+Edit the source files `_data/cbs.csv`, `_data/liss.csv` or `_data/port.csv`.
 
 ## Step 3: Commit changes to GitHub and create pull request
-Commit your changes to (a branch  of) the GitHub repository.
+Commit your changes to a branch  of the GitHub repository.
 
 ## Step 4: Admire the result
 Once the pull request is accepted, and the checks are all successful, the result will be visible on the [ODISSEI code library](https://odissei-data.github.io/ODISSEI-code-library/) within a few minutes.

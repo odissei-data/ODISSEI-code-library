@@ -1,3 +1,3 @@
-platform,extractionscript,analysis,project_lead,orcid,participants,data,publication,odissei_grant
-WhatsApp ,https://github.com/sodascience/port-whatsapp-datadonation,,Rense Corten,https://orcid.org/0000-0001-8154-9393,LISS panel,https://doi.org/10.57990/ge66-3v89,,LISS grant 2021
-Google Assistant,https://github.com/d3i-infra/port-google-home-uva,https://osf.io/hy3mj/,Rebecca Wald,https://orcid.org/0000-0003-2086-903X,Motivaction,https://osf.io/hy3mj/,https://www.tandfonline.com/doi/pdf/10.1080/1369118X.2025.2540915,
+platform,method,extractionscript,analysis,project_lead,orcid,participants,data,publication,odissei_grant
+WhatsApp ,Port,https://github.com/sodascience/port-whatsapp-datadonation,,Rense Corten,https://orcid.org/0000-0001-8154-9393,LISS panel,https://doi.org/10.57990/ge66-3v89,,LISS grant 2021
+Google Assistant,Port,https://github.com/d3i-infra/port-google-home-uva,https://osf.io/hy3mj/,Rebecca Wald,https://orcid.org/0000-0003-2086-903X,Motivaction,https://osf.io/hy3mj/,https://www.tandfonline.com/doi/pdf/10.1080/1369118X.2025.2540915,

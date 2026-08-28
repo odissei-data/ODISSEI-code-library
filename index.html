@@ -132,7 +132,7 @@ submission_text: Please submit an issue using the Submission code issue template
           <tr>
             <td>{{forloop.index}}</td>
             <td><a target="_blank" href='{{ row["code"] }}'>{{ row["title"] }}</a></td>
-            <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
+            <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a></td>
             <td>{{ row["programming language"] }}</td>
             <td width="10%">
                 {% if row.publication %}
@@ -205,7 +205,7 @@ submission_text: Please submit an issue using the Submission code issue template
           <tr>
             <td>{{ forloop.index }}</td>
             <td width="30%"><a target="_blank" href='{{ row["code"] }}'>{{ row["title"] }}</a></td>
-            <td width="10%"><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
+            <td width="10%"><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a></td>
             <td width="10%">{{ row["programming language"] }}</td>
             <td width="10%">
                 {% if row.publication %}
@@ -281,9 +281,9 @@ submission_text: Please submit an issue using the Submission code issue template
             <td>{{forloop.index}}</td>
             <td>{{row["platform"]}}</td>
 	    <td>{{row["method"]}}</td>
-	    <td><a target="_blank" href='{{ row["extractionscript"] }}'>{{row["extractionscript"]}}</a</td>
-            <td><a target="_blank" href='{{ row["analysis"] }}'>{{row["analysis"]}}</a</td>
-            <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a</td>
+	    <td><a target="_blank" href='{{ row["extractionscript"] }}'>{{row["extractionscript"]}}</a></td>
+            <td><a target="_blank" href='{{ row["analysis"] }}'>{{row["analysis"]}}</a></td>
+            <td><a target="_blank" href='{{ row["orcid"] }}'>{{row["project_lead"]}}</a></td>
             <td width="10%">
                 {% if row.publication %}
                 <a target="_blank" href="{{ row.publication }}">doi</a>

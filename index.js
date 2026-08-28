@@ -1,32 +1,12 @@
 $(document).ready(function () {
-  // Splits multi-value cells like "Stata; R" and builds a <select> filter
-  // for a given column, wired to DataTables' column search.
-  function addColumnFilter(api, selectId, columnIndex) {
+  // Wires a <select id="selectId"> (options already rendered server-side)
+  // to a DataTables column search, matching whole values inside
+  // semicolon-separated cells like "Stata; R".
+  function wireColumnFilter(api, selectId, columnIndex) {
     var select = $("#" + selectId);
-    if (select.length === 0) return; // filter UI not present for this table, skip
+    if (select.length === 0) return;
 
     var column = api.column(columnIndex);
-    var values = column
-      .data()
-      .toArray()
-      .flatMap(function (v) {
-        return String(v)
-          .split(";")
-          .map(function (s) {
-            return s.trim();
-          });
-      })
-      .filter(function (v, i, arr) {
-        return v && v.toLowerCase() !== "na" && arr.indexOf(v) === i;
-      })
-      .sort(function (a, b) {
-        return a.localeCompare(b);
-      });
-
-    values.forEach(function (v) {
-      select.append('<option value="' + v.replace(/"/g, "&quot;") + '">' + v + "</option>");
-    });
-
     select.on("change", function () {
       var val = $(this).val();
       if (!val) {
@@ -34,21 +14,15 @@ $(document).ready(function () {
         return;
       }
       var escaped = $.fn.dataTable.util.escapeRegex(val);
-      // Match the value as a whole entry even inside "A; B; C" style cells
       var pattern = "(^|;\\s*)" + escaped + "(\\s*;|$)";
       column.search(pattern, true, false).draw();
     });
   }
 
   function initFilterableTable(tableId, filters) {
-    var table = $(tableId).DataTable({
-      pageLength: 50,
-      initComplete: function () {
-        var api = this.api();
-        filters.forEach(function (f) {
-          addColumnFilter(api, f.selectId, f.columnIndex);
-        });
-      },
+    var table = $(tableId).DataTable({ pageLength: 50 });
+    filters.forEach(function (f) {
+      wireColumnFilter(table, f.selectId, f.columnIndex);
     });
     return table;
   }

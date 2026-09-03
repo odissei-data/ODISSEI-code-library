@@ -1,6 +1,3 @@
-# WARNING!
-Note this is the outdated version of the ODISSEI code library. Please visit https://github.com/odissei-data/ODISSEI-code-library and https://odissei-data.github.io/ODISSEI-code-library/ for the most recent version.
-
 # ODISSEI Code Library
 The [ODISSEI code library](https://odissei-data.github.io/ODISSEI-code-library/) is a collection of code and scripts used to execute projects using the ODISSEI infrastructure. [ODISSEI](https://odissei-data.nl/en/) (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.
 
@@ -16,6 +13,11 @@ Do you want to submit your own project and code to be added to the library? Plea
 ## Step 2: Update data
 Edit the source files `_data/cbs.csv`, `_data/liss.csv` or `_data/port.csv`.
 
+A few formatting rules to keep the site's search and filter dropdowns working correctly:
+- For any field that can hold multiple values (e.g. `programming language`, `data used`, `platform`, `method`), separate multiple entries with a **semicolon (`;`)**, not a comma — e.g. `Python; R`. Commas are only for prose inside a single value (e.g. a dataset description).
+- For CBS entries, `CBS_project_nr` should be digits only (e.g. `8674`), with no prefixes or extra text. This is the key used to automatically look up that project's CBS data tables from the ODISSEI Knowledge Graph.
+- Do not edit the `data_design` column in `_data/cbs.csv` by hand — it's generated automatically at build time from the Knowledge Graph (see "CBS data design enrichment" above) and any manual edits will be overwritten on the next build.
+
 ## Step 3: Commit changes to GitHub and create pull request
 Commit your changes to a branch  of the GitHub repository.
 
@@ -27,3 +29,4 @@ If you would like to test locally, see [Testing your GitHub Pages site locally w
 ```
 $ bundle exec jekyll serve
 ```
+If you've added new CBS entries and want to see their `data_design` column filled in locally rather than waiting for the next deploy, run `python3 enrich_cbs.py` (requires `pip install requests`) before starting Jekyll — it rewrites `_data/cbs.csv` in place from the live Knowledge Graph.

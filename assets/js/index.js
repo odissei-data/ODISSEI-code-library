@@ -14,7 +14,10 @@ $(document).ready(function () {
         return;
       }
       var escaped = $.fn.dataTable.util.escapeRegex(val);
-      var pattern = "(^|;\\s*)" + escaped + "(\\s*;|$)";
+      // Match the whole value even when the cell wraps it in a link, e.g.
+      // '...">CITOTAB</a>; <a...' -- boundaries can be ';', string start/end,
+      // or the '>'/'<' either side of an <a> tag.
+      var pattern = "(^|;\\s*|>)" + escaped + "(\\s*;|$|<)";
       column.search(pattern, true, false).draw();
     });
   }

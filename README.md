@@ -1,6 +1,9 @@
 # ODISSEI Code Library
 The [ODISSEI code library](https://odissei-data.github.io/ODISSEI-code-library/) is a collection of code and scripts used to execute projects using the ODISSEI infrastructure. [ODISSEI](https://odissei-data.nl/en/) (Open Data Infrastructure for Social Science and Economic Innovations) is the national research infrastructure for the social sciences in the Netherlands. ODISSEI brings together researchers with the necessary data, expertise and resources to conduct ground-breaking research and embrace the computational turn in social enquiry. Through ODISSEI, researchers have access to large-scale, longitudinal data collections as well as innovative and diverse new forms of data. These can be linked to administrative data at Statistics Netherlands (CBS). Combining data from a wide range of sources enables researchers to answer new, exciting, interdisciplinary research questions and to investigate existing questions in novel, new ways.
 
+# CBS data design enrichment
+The data_design column in `_data/cbs.csv` is populated automatically from the [ODISSEI Knowledge Graph](kg.odissei.nl/), matched via each entry's CBS_project_nr. This happens at build time — a script (`enrich_cbs.py`) runs as a step in the GitHub Actions workflow before Jekyll builds the site, querying the KG's production SPARQL endpoint for every valid project number found in the CSV and writing back one entry per distinct CBS data table used (formatted as ShortCode|DOI|DutchTitle, separated by ; for projects using multiple tables), which the site then renders as clickable, filterable table codes with the Dutch title as a hover tooltip. This means the column is fully KG-managed: you never need to fill it in by hand when adding a new entry to `cbs.csv` — as long as the row has a plain numeric CBS_project_nr, the next build (triggered by any push, or automatically every Monday) will populate it — and any manual edits to that column will be overwritten on the next build. If the KG is temporarily unreachable during a build, the step fails safely (continue-on-error) and the site simply deploys with whichever data_design values were already committed from the last successful run. Note: Claude (Sonnet 5) was used to implement this upgrade
+
 # Contribute
 Do you want to submit your own project and code to be added to the library? Please submit an issue using the _Submission code_ issue template (or [send me an email](mailto:fairsupport@odissei-data.nl)).
 
@@ -9,6 +12,11 @@ Do you want to submit your own project and code to be added to the library? Plea
 
 ## Step 2: Update data
 Edit the source files `_data/cbs.csv`, `_data/liss.csv` or `_data/port.csv`.
+
+A few formatting rules to keep the site's search and filter dropdowns working correctly:
+- For any field that can hold multiple values (e.g. `programming language`, `data used`, `platform`, `method`), separate multiple entries with a **semicolon (`;`)**, not a comma — e.g. `Python; R`. Commas are only for prose inside a single value (e.g. a dataset description).
+- For CBS entries, `CBS_project_nr` should be digits only (e.g. `8674`), with no prefixes or extra text. This is the key used to automatically look up that project's CBS data tables from the ODISSEI Knowledge Graph.
+- Do not edit the `data_design` column in `_data/cbs.csv` by hand — it's generated automatically at build time from the Knowledge Graph (see "CBS data design enrichment" above) and any manual edits will be overwritten on the next build.
 
 ## Step 3: Commit changes to GitHub and create pull request
 Commit your changes to a branch  of the GitHub repository.
@@ -21,3 +29,4 @@ If you would like to test locally, see [Testing your GitHub Pages site locally w
 ```
 $ bundle exec jekyll serve
 ```
+If you've added new CBS entries and want to see their `data_design` column filled in locally rather than waiting for the next deploy, run `python3 enrich_cbs.py` (requires `pip install requests`) before starting Jekyll — it rewrites `_data/cbs.csv` in place from the live Knowledge Graph.

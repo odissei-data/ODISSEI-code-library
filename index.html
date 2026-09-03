@@ -157,6 +157,7 @@ submission_text: Please submit an issue using the Submission code issue template
     <!-- CBS -->
     {% assign cbs_lang_accum = "" %}
     {% assign cbs_data_accum = "" %}
+    {% assign cbs_design_accum = "" %}
     {% for row in site.data.cbs %}
       {% assign langs = row["programming language"] | split: ";" %}
       {% for v in langs %}
@@ -168,9 +169,16 @@ submission_text: Please submit an issue using the Submission code issue template
         {% assign clean = v | strip %}
         {% if clean != "" %}{% assign cbs_data_accum = cbs_data_accum | append: clean | append: "|||" %}{% endif %}
       {% endfor %}
+      {% assign designs = row["data_design"] | split: ";" %}
+      {% for v in designs %}
+        {% assign trimmed = v | strip %}
+        {% assign parts = trimmed | split: "|" %}
+        {% if parts.size == 3 %}{% assign cbs_design_accum = cbs_design_accum | append: parts[0] | append: "|||" %}{% endif %}
+      {% endfor %}
     {% endfor %}
     {% assign cbs_languages = cbs_lang_accum | split: "|||" | uniq | sort %}
     {% assign cbs_data_sources = cbs_data_accum | split: "|||" | uniq | sort %}
+    {% assign cbs_data_designs = cbs_design_accum | split: "|||" | uniq | sort %}
     <div x-show="activeTab === 'CBS microdata'">
       <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
       <label class="fw-bold me-2 mb-0">Filter by:</label>
@@ -183,6 +191,12 @@ submission_text: Please submit an issue using the Submission code issue template
       <select id="cbsDataFilter" class="form-select w-auto">
         <option value="">All data used</option>
         {% for v in cbs_data_sources %}{% unless v == "" %}
+        <option value="{{ v }}">{{ v }}</option>
+        {% endunless %}{% endfor %}
+      </select>
+      <select id="cbsDataDesignFilter" class="form-select w-auto">
+        <option value="">All data designs</option>
+        {% for v in cbs_data_designs %}{% unless v == "" %}
         <option value="{{ v }}">{{ v }}</option>
         {% endunless %}{% endfor %}
       </select>
@@ -201,6 +215,7 @@ submission_text: Please submit an issue using the Submission code issue template
             <th>Data used</th>
             <th>Data produced</th>
             <th>CBS project nr.</th>
+            <th>Data design used in CBS project</th>
             <th>ODISSEI grant</th>
           </tr>
         </thead>
@@ -224,6 +239,16 @@ submission_text: Please submit an issue using the Submission code issue template
               {% endfor %}
             </td>
             <td width= "5%">{{ row["CBS_project_nr"] }}</td>
+            <td width="15%">
+              {% assign designs = row["data_design"] | split: ";" %}
+              {% for entry in designs %}
+                {% assign trimmed = entry | strip %}
+                {% assign parts = trimmed | split: "|" %}
+                {% if parts.size == 3 %}
+                  <a target="_blank" href="{{ parts[1] }}" title="{{ parts[2] }}">{{ parts[0] }}</a>{% unless forloop.last %}; {% endunless %}
+                {% endif %}
+              {% endfor %}
+            </td>
             <td width="10%">{{ row["ODISSEI_grant"] }}</td>
           </tr>
           {% endfor %}

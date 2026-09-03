@@ -31,6 +31,7 @@ $(document).ready(function () {
   var cbsTable = initFilterableTable("#cbsTable", [
     { selectId: "cbsLanguageFilter", columnIndex: 3 }, // Code Language
     { selectId: "cbsDataFilter", columnIndex: 5 }, // Data used
+    { selectId: "cbsDataDesignFilter", columnIndex: 8 }, // Data design
   ]);
 
   var lissTable = initFilterableTable("#lissTable", [

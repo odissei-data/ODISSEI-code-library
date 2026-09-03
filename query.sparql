@@ -1,0 +1,10 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+SELECT ?project ?dataset ?shortTitle ?datasetTitle WHERE {
+  ?project dct:requires ?datasetHash .
+  ?datasetHash dct:alternative ?shortTitle .
+  ?dataset dct:alternative ?shortTitle .
+  ?dataset a schema:Dataset .
+  OPTIONAL { ?dataset dct:title ?datasetTitle }
+  FILTER(STRENDS(STR(?project), "/8674"))
+}

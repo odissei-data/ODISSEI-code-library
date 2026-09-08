@@ -195,7 +195,7 @@ submission_text: Please submit an issue using the Submission code issue template
         {% endunless %}{% endfor %}
       </select>
       <select id="cbsDataDesignFilter" class="form-select w-auto">
-        <option value="">All data designs</option>
+        <option value="">All CBS datasets</option>
         {% for v in cbs_data_designs %}{% unless v == "" %}
         <option value="{{ v }}">{{ v }}</option>
         {% endunless %}{% endfor %}
@@ -215,7 +215,7 @@ submission_text: Please submit an issue using the Submission code issue template
             <th>Data used</th>
             <th>Data produced</th>
             <th>CBS project nr.</th>
-            <th>Data design used in CBS project</th>
+            <th>Dataset used in CBS project</th>
             <th>ODISSEI grant</th>
           </tr>
         </thead>

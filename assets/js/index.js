@@ -22,8 +22,13 @@ $(document).ready(function () {
     });
   }
 
-  function initFilterableTable(tableId, filters) {
-    var table = $(tableId).DataTable({ pageLength: 50 });
+  // sortColumn: index of the column the table is sorted by on load
+  // (the "Project lead" column).
+  function initFilterableTable(tableId, filters, sortColumn) {
+    var table = $(tableId).DataTable({
+      pageLength: 50,
+      order: [[sortColumn, "asc"]],
+    });
     filters.forEach(function (f) {
       wireColumnFilter(table, f.selectId, f.columnIndex);
     });
@@ -35,16 +40,16 @@ $(document).ready(function () {
     { selectId: "cbsLanguageFilter", columnIndex: 3 }, // Code Language
     { selectId: "cbsDataFilter", columnIndex: 5 }, // Data used
     { selectId: "cbsDataDesignFilter", columnIndex: 8 }, // Data design
-  ]);
+  ], 2); // sorted by Project lead
 
   var lissTable = initFilterableTable("#lissTable", [
     { selectId: "lissLanguageFilter", columnIndex: 3 }, // Code language
-  ]);
+  ], 2); // sorted by Project lead
 
   var portTable = initFilterableTable("#portTable", [
     { selectId: "portPlatformFilter", columnIndex: 1 }, // Platform
     { selectId: "portMethodFilter", columnIndex: 2 }, // Method
-  ]);
+  ], 5); // sorted by Project lead
 
   // DataTables can miscalculate column widths when initialized on a
   // hidden (x-show="false") table. Recalculate whenever a tab is shown.

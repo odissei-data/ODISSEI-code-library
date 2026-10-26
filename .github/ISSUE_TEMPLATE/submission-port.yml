@@ -34,7 +34,7 @@ body:
   - type: input
     id: project_lead
     attributes:
-      label: Project lead name
+      label: Project lead name,  only one person can be indicated.
       placeholder: Jane Doe
     validations:
       required: true
@@ -42,7 +42,7 @@ body:
     id: orcid
     attributes:
       label: ORCID URL
-      description: If there are multiple project leads, separate their ORCID URLs with a comma.
+      description: ORCID of the project lead.
       placeholder: "https://orcid.org/0000-0000-0000-0000"
     validations:
       required: true

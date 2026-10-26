@@ -1,0 +1,72 @@
+name: Submit a CBS microdata project
+description: Add your project to the CBS microdata section of the ODISSEI code library
+title: "[CBS submission] "
+labels: ["submission-cbs"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Fill in what you can below -- once submitted, a maintainer will review your entry and open a pull request to add it. You don't need to edit any CSV file yourself.
+  - type: input
+    id: title
+    attributes:
+      label: Project title
+      placeholder: e.g. Socio-economic inequality in school outcomes
+    validations:
+      required: true
+  - type: input
+    id: cbs_project_nr
+    attributes:
+      label: CBS project number
+      description: Digits only, no prefixes (e.g. 8674). Leave blank if not available. This number is used to automatically look up CBS data tables from the ODISSEI Knowledge Graph, so an incorrect format means that lookup won't work.
+      placeholder: "8674"
+  - type: input
+    id: project_lead
+    attributes:
+      label: Project lead name
+      placeholder: Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID URL
+      description: If there are multiple project leads, separate their ORCID URLs with a comma.
+      placeholder: "https://orcid.org/0000-0000-0000-0000"
+    validations:
+      required: true
+  - type: input
+    id: odissei_grant
+    attributes:
+      label: ODISSEI grant
+      description: Funding stream and year, if applicable (e.g. "MAG 2022"). Leave blank if not applicable.
+  - type: input
+    id: publication
+    attributes:
+      label: Publication DOI or URL
+      description: Leave blank if there is no associated publication yet.
+  - type: input
+    id: data_used
+    attributes:
+      label: Data used
+      description: 'Separate multiple data sources with a semicolon (;), e.g. "CBS microdata; LISS panel" -- not a comma, as this powers the site''s filter dropdown.'
+    validations:
+      required: true
+  - type: input
+    id: data_produced
+    attributes:
+      label: Data produced (link)
+      description: Leave blank if not applicable.
+  - type: input
+    id: code
+    attributes:
+      label: Link to code (URL or DOI)
+    validations:
+      required: true
+  - type: input
+    id: programming_language
+    attributes:
+      label: Programming language(s)
+      description: 'Separate multiple languages with a semicolon (;), e.g. "Python; R" -- not a comma, as this powers the site''s filter dropdown.'
+    validations:
+      required: true

@@ -1,0 +1,68 @@
+name: Submit a Port / Data Donation project
+description: Add your project to the Data Donation section of the ODISSEI code library
+title: "[Port submission] "
+labels: ["submission-port"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Fill in what you can below -- once submitted, a maintainer will review your entry and open a pull request to add it. You don't need to edit any CSV file yourself.
+  - type: input
+    id: platform
+    attributes:
+      label: Platform(s)
+      description: 'Separate multiple platforms with a semicolon (;), e.g. "Instagram; Facebook" -- not a comma, as this powers the site''s filter dropdown.'
+    validations:
+      required: true
+  - type: input
+    id: method
+    attributes:
+      label: Method(s)
+      description: 'Separate multiple methods with a semicolon (;) -- not a comma, as this powers the site''s filter dropdown.'
+    validations:
+      required: true
+  - type: input
+    id: extractionscript
+    attributes:
+      label: Link to extraction script
+      description: Leave blank if not applicable.
+  - type: input
+    id: analysis
+    attributes:
+      label: Link to analysis script
+      description: Leave blank if not applicable.
+  - type: input
+    id: project_lead
+    attributes:
+      label: Project lead name
+      placeholder: Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID URL
+      description: If there are multiple project leads, separate their ORCID URLs with a comma.
+      placeholder: "https://orcid.org/0000-0000-0000-0000"
+    validations:
+      required: true
+  - type: input
+    id: participants
+    attributes:
+      label: Recruitment / participants
+      description: Brief note on how participants were recruited. Leave blank if not applicable.
+  - type: input
+    id: data
+    attributes:
+      label: Link to data
+      description: Leave blank if not applicable.
+  - type: input
+    id: publication
+    attributes:
+      label: Publication DOI or URL
+      description: Leave blank if there is no associated publication yet.
+  - type: input
+    id: odissei_grant
+    attributes:
+      label: ODISSEI grant
+      description: Funding stream and year, if applicable (e.g. "MAG 2022"). Leave blank if not applicable.

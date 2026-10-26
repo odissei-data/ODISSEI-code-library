@@ -1,0 +1,83 @@
+name: Process new library submission
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  process-submission:
+    # Only run for issues opened via one of the three submission forms
+    # (each form auto-applies its own label on submission).
+    if: >
+      contains(github.event.issue.labels.*.name, 'submission-cbs') ||
+      contains(github.event.issue.labels.*.name, 'submission-liss') ||
+      contains(github.event.issue.labels.*.name, 'submission-port')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine target library
+        id: target
+        run: |
+          if [[ "${{ contains(github.event.issue.labels.*.name, 'submission-cbs') }}" == "true" ]]; then
+            echo "library=cbs" >> "$GITHUB_OUTPUT"
+            echo "template_path=.github/ISSUE_TEMPLATE/submission-cbs.yml" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ contains(github.event.issue.labels.*.name, 'submission-liss') }}" == "true" ]]; then
+            echo "library=liss" >> "$GITHUB_OUTPUT"
+            echo "template_path=.github/ISSUE_TEMPLATE/submission-liss.yml" >> "$GITHUB_OUTPUT"
+          else
+            echo "library=port" >> "$GITHUB_OUTPUT"
+            echo "template_path=.github/ISSUE_TEMPLATE/submission-port.yml" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Parses the issue body (which follows the Issue Form's structure) into
+      # a JSON object keyed by each field's `id`, e.g. {"title": "...", ...}
+      - name: Parse issue form
+        uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
+        with:
+          template-path: ${{ steps.target.outputs.template_path }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Append submission to CSV
+        env:
+          ISSUE_JSON: ${{ steps.issue-parser.outputs.jsonString }}
+          LIBRARY: ${{ steps.target.outputs.library }}
+        run: python3 scripts/append_submission.py
+
+      - name: Create pull request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Add new ${{ steps.target.outputs.library }} submission from issue #${{ github.event.issue.number }}"
+          title: "New submission: ${{ github.event.issue.title }}"
+          body: |
+            Auto-generated from #${{ github.event.issue.number }}, submitted by @${{ github.event.issue.user.login }}.
+
+            Please review the new row in `_data/${{ steps.target.outputs.library }}.csv` before merging -- in particular check for any encoding issues (accents, special characters) and that semicolon-separated fields look right.
+
+            Closes #${{ github.event.issue.number }}
+          branch: "submission/issue-${{ github.event.issue.number }}"
+          labels: "new-submission"
+
+      - name: Comment on issue
+        if: steps.cpr.outputs.pull-request-number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Thanks for the submission! I've opened #${{ steps.cpr.outputs.pull-request-number }} with your entry for a maintainer to review -- it'll appear on the site once that's merged.`
+            })

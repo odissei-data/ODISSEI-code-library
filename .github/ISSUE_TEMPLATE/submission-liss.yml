@@ -1,0 +1,71 @@
+name: Submit a LISS panel project
+description: Add your project to the LISS panel section of the ODISSEI code library
+title: "[LISS submission] "
+labels: ["submission-liss"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Fill in what you can below -- once submitted, a maintainer will review your entry and open a pull request to add it. You don't need to edit any CSV file yourself.
+  - type: input
+    id: title
+    attributes:
+      label: Project title
+      placeholder: e.g. Panel attrition and wellbeing over the life course
+    validations:
+      required: true
+  - type: input
+    id: project_lead
+    attributes:
+      label: Project lead name
+      placeholder: Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID URL
+      description: If there are multiple project leads, separate their ORCID URLs with a comma.
+      placeholder: "https://orcid.org/0000-0000-0000-0000"
+    validations:
+      required: true
+  - type: input
+    id: odissei_grant
+    attributes:
+      label: ODISSEI grant
+      description: Funding stream and year, if applicable (e.g. "MAG 2022"). Leave blank if not applicable.
+  - type: input
+    id: publication_type
+    attributes:
+      label: Publication type
+      description: e.g. journal article, working paper, thesis. Leave blank if not applicable.
+  - type: input
+    id: publication
+    attributes:
+      label: Publication DOI or URL
+      description: Leave blank if there is no associated publication yet.
+  - type: input
+    id: data
+    attributes:
+      label: Data used
+      description: 'Separate multiple data sources with a semicolon (;), e.g. "LISS core; LISS Health" -- not a comma, as this powers the site''s filter dropdown.'
+    validations:
+      required: true
+  - type: input
+    id: link_data
+    attributes:
+      label: Link to data
+      description: Leave blank if not applicable.
+  - type: input
+    id: code
+    attributes:
+      label: Link to code (URL or DOI)
+    validations:
+      required: true
+  - type: input
+    id: programming_language
+    attributes:
+      label: Programming language(s)
+      description: 'Separate multiple languages with a semicolon (;), e.g. "Python; R" -- not a comma, as this powers the site''s filter dropdown.'
+    validations:
+      required: true

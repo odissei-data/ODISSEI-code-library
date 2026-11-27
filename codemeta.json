@@ -65,6 +65,18 @@
             "email": "a.valdestilhas@vu.nl",
             "familyName": "Valdestilhas",
             "givenName": "Andre"
+        },
+        {
+            "@id": "https://orcid.org/0009-0004-3773-7548",
+            "@type": "Person",
+            "affiliation": {  
+                "@type": "Organization",
+                "@id": "https://ror.org/03m8v6t10",
+                "name": "ODISSEI"
+            },
+            "email": "tadas@odissei-data.nl",
+            "familyName": "Bernotas",
+            "givenName": "Tadas"
         }
     ],
     "dateCreated": "2023-06-26",
@@ -118,7 +130,7 @@
           "url": "https://odissei-data.github.io/ODISSEI-code-library/"
         }
     ],
-    "version": "1.0.1",
+    "version": "2.0",
     "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library/deployments",
     "codemeta:continuousIntegration": {
         "id": "https://github.com/odissei-data/ODISSEI-code-library/deployments"

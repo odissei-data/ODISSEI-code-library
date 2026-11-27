@@ -130,7 +130,7 @@
           "url": "https://odissei-data.github.io/ODISSEI-code-library/"
         }
     ],
-    "version": "2.0",
+    "version": "2.0.0",
     "contIntegration": "https://github.com/odissei-data/ODISSEI-code-library/deployments",
     "codemeta:continuousIntegration": {
         "id": "https://github.com/odissei-data/ODISSEI-code-library/deployments"
